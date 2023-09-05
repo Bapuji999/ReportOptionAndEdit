@@ -1,0 +1,55 @@
+.headings{
+    margin: 10px;
+    font-weight: bold;
+}
+.form-group{
+    margin: 10px;
+    width: 350px;
+}
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+.table{
+    width: 310px;
+}
+
+.tbsub{
+    width: 165px;
+}
+
+.SnameLeft{
+    float: left;
+}
+
+.SnameRight{
+    width: 140px;
+    margin-left: 40px;
+}
+
+button{
+    margin-top: 25px;
+}
+
+.subDis{
+    float: right;
+}
+.examBlock{
+    width: 80%;
+    display: flex;
+}
+.examBlockTerm1{
+    width:40%;
+    float: left;
+}
+.examBlockTerm2{
+    width:40%;
+    float: right;
+}
+.principal{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

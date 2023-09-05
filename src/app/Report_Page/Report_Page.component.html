@@ -1,0 +1,320 @@
+<div id="bodyDiv" style="border-color: black; border-width: 2px; border-style: solid; width: 57%; margin: auto;">
+  <div style="display: flex; justify-content: space-between;" *ngIf="options.logo || options.bordLogo">
+    <div *ngIf="options.logo">
+      <img src="../assets/Image/mraLogo1.png" alt="ok" />
+    </div>
+    <div style="justify-content: center; align-items: center; display: flex; margin-left: 20px;">
+      <div [innerHTML]="trustedHtml"></div>
+    </div>
+    <div style="float: right;" *ngIf="options.bordLogo">
+      <img src="../assets/Image/CBSE-Black.png" alt="ok" />
+    </div>
+  </div>
+  <div *ngIf="!(options.logo || options.bordLogo)" style="height: 100px; display: flex;">
+    <div [innerHTML]="options.editorContent"
+      style="justify-content: center; align-items: center; display: flex; margin-left: 20px;">
+    </div>
+  </div>
+  <div
+    style="font-weight: bold; font-size: 15px; border-color: black; border-width: 2px; border-style: solid; margin: 2px; text-align: center; padding: 5px;">
+    PROGRESS REPORT ({{options.termI}})
+  </div>
+  <div
+    style="font-weight: bold; font-size: 15px; border-color: black; border-width: 2px; border-style: solid; margin: 2px; text-align: center; padding: 5px;">
+    SESSION 2023-24
+  </div>
+  <div
+    style="font-weight: bold; font-size: 15px; border-color: black; border-width: 2px; border-style: solid; margin: 2px; padding: 5px;">
+    <div style="display: inline-flex; margin-right: 2px; margin-top: 6px; min-width: 49%;">
+      <div style="width: 150px; margin-right: 5px;">
+        <div style="float: left;">
+          Name
+        </div>
+        <div style="float: right;">
+          :
+        </div>
+      </div>
+      <div>
+        AARYN MAHENDROO
+      </div>
+    </div>
+    <div style="display: inline-flex; margin-right: 2px; margin-top: 6px; min-width: 49%; ">
+      <div style="width: 150px; margin-right: 5px;">
+        <div style="float: left;">
+          Class Section
+        </div>
+        <div style="float: right;">
+          :
+        </div>
+      </div>
+      <div>
+        VIII - A
+      </div>
+    </div>
+    <div style="display: inline-flex; margin-right: 2px; margin-top: 6px; min-width: 49%; ">
+      <div style="width: 150px; margin-right: 5px;">
+        <div style="float: left;">
+          Admission No.
+        </div>
+        <div style="float: right;">
+          :
+        </div>
+      </div>
+      <div>
+        PR4858
+      </div>
+    </div>
+    <div style="display: inline-flex; margin-right: 2px; margin-top: 6px; min-width: 49%; ">
+      <div style="width: 150px; margin-right: 5px;">
+        <div style="float: left;">
+          Roll No.
+        </div>
+        <div style="float: right;">
+          :
+        </div>
+      </div>
+      <div>
+        01
+      </div>
+    </div>
+    <div style="display: inline-flex; margin-right: 2px; margin-top: 6px; min-width: 49%; " *ngIf="options.fatherName">
+      <div style="width: 150px; margin-right: 5px;">
+        <div style="float: left;">
+          Father's Name
+        </div>
+        <div style="float: right;">
+          :
+        </div>
+      </div>
+      <div>
+        SACHIN KUMAR
+      </div>
+    </div>
+    <div style="display: inline-flex; margin-right: 2px; margin-top: 6px; min-width: 49%; " *ngIf="options.dob">
+      <div style="width: 150px; margin-right: 5px;">
+        <div style="float: left;">
+          Date of Birth
+        </div>
+        <div style="float: right;">
+          :
+        </div>
+      </div>
+      <div>
+        18-Oct-2009
+      </div>
+    </div>
+    <div style="display: inline-flex; margin-right: 2px; margin-top: 6px; min-width: 49%; " *ngIf="options.motherName">
+      <div style="width: 150px; margin-right: 5px;">
+        <div style="float: left;">
+          Mother's Name
+        </div>
+        <div style="float: right;">
+          :
+        </div>
+      </div>
+      <div>
+        POOJA
+      </div>
+    </div>
+  </div>
+  <div style="font-weight: bold; font-size: 15px; padding: 3px;">
+    <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+      <thead>
+        <th style="width: 33%; border: 1px solid black; border-collapse: collapse;">SUBJECT</th>
+        <th style="width: 10%; border: 1px solid black; border-collapse: collapse;">{{options.unitTest}}<br> (10)</th>
+        <th style="width: 10%; border: 1px solid black; border-collapse: collapse;">{{options.noteBook}}<br>(5)</th>
+        <th style="width: 15%; border: 1px solid black; border-collapse: collapse;">{{options.subjectEnrichment}}<br>
+          (5)</th>
+        <th style="width: 11%; border: 1px solid black; border-collapse: collapse;">{{options.halfYearly}}<br>(80)</th>
+        <th style="width: 11%; border: 1px solid black; border-collapse: collapse;" *ngIf="options.totalPerSubject">
+          Total<br> (100)</th>
+        <th style="width: 10%; border: 1px solid black; border-collapse: collapse;" *ngIf="options.grade">Grade</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="width: 33%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.english}}</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 15%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.totalPerSubject">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.grade">E</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.hindi}}</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 15%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.totalPerSubject">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.grade">E</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.punjabi}}</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 15%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.totalPerSubject">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.grade">E</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.science}}</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 15%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.totalPerSubject">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.grade">E</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.socialScience}}
+          </td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 15%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.totalPerSubject">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.grade">E</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.sanskrit}}</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 15%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.totalPerSubject">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.grade">E</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.computerScience}}</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 15%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.totalPerSubject">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.grade">E</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.drawing}}</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 15%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;">0</td>
+          <td style="width: 11%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.totalPerSubject">0</td>
+          <td style="width: 10%; text-align: center; border: 1px solid black; border-collapse: collapse;"
+            *ngIf="options.grade">E</td>
+        </tr>
+        <tr *ngIf="options.overalTotal">
+          <td style="width: 33%;"></td>
+          <td style="width: 10%;" *ngIf="options.totalPerSubject"></td>
+          <td style="width: 10%;"></td>
+          <td style="width: 15%;"></td>
+          <td style="width: 11%;">TOTAL</td>
+          <td style="width: 11%; text-align: center; border-left: 1px solid black; border-collapse: collapse;">0/800
+          </td>
+          <td style="width: 10%;" *ngIf="options.grade"></td>
+        </tr>
+        <tr style="border-top: 1px solid black; border-collapse: collapse;" *ngIf="options.overalPercentage">
+          <td style="width: 33%;"></td>
+          <td style="width: 10%;" *ngIf="options.totalPerSubject"></td>
+          <td style="width: 10%;"></td>
+          <td style="width: 15%;"></td>
+          <td style="width: 11%;">PERCENTAGE</td>
+          <td style="width: 11%; text-align: center; border-left: 1px solid black; border-collapse: collapse;">0.0%</td>
+          <td style="width: 10%;" *ngIf="options.grade"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="font-weight: bold; font-size: 15px; padding: 3px;">
+    <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+      <thead>
+        <th
+          style="width: 50%; border: 1px solid black; border-collapse: collapse; text-align: left; padding-left: 15px;">
+          CO-CURRICULAR ACTIVITIES</th>
+        <th style="width: 50%; border: 1px solid black; border-collapse: collapse; text-align: center;">
+          {{options.termI}}</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.generalKnowledge}}</td>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;"></td>
+        </tr>
+        <tr>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.moralValues}}
+          </td>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;"></td>
+        </tr>
+        <tr>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.workEducation}}</td>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;"></td>
+        </tr>
+        <tr>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.health}}</td>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;"></td>
+        </tr>
+        <tr>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;">
+            {{options.discipline}}</td>
+          <td style="width: 50%; border: 1px solid black; border-collapse: collapse; padding-left: 15px;"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf=" options.parentSig || options.educatorSig "
+    style="padding: 110px 40px 5px 40px; font-weight: bold; font-size: 15px; overflow: hidden; display: flex; justify-content: space-between;">
+    <div style="float: left; text-align: center; margin-top: 110px;" *ngIf="options.parentSig">
+      <div>{{options.parentDisplay}}</div>
+    </div>
+    <div style="float: left; text-align: center;" *ngIf="options.educatorSig">
+      <div>
+        <img src="../assets/Image/Screenshot 2023-09-04 164413.png" alt="ok" />
+      </div>
+      <div>{{options.educatorDisplay}}</div>
+    </div>
+    <div style="float: right; text-align: center;">
+      <div>
+        <img src="../assets/Image/Screenshot 2023-09-04 164413.png" alt="ok" />
+      </div>
+      <div>{{options.principalDisplay}}</div>
+    </div>
+  </div>
+  <div *ngIf="!(options.parentSig || options.educatorSig)"
+    style="padding: 110px 40px 5px 40px; font-weight: bold; font-size: 15px; overflow: hidden;">
+    <div style="float: right; text-align: center;">
+      <div>
+        <img src="../assets/Image/Screenshot 2023-09-04 164413.png" alt="ok" />
+      </div>
+      <div>{{options.principalDisplay}}</div>
+    </div>
+  </div>
+</div>
+<button (click)="printTable()">Print</button>

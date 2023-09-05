@@ -1,0 +1,131 @@
+<h2>Option Form</h2>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="headings">
+    Images :
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="logo" name="logo" class="form-control" [(ngModel)]="formData.logo">
+    <label for="School Logo">School Logo</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="bordLogo" name="bordLogo" class="form-control" [(ngModel)]="formData.bordLogo">
+    <label for="boardLogo">Board Logo</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="studentImage" name="studentImage" class="form-control" [(ngModel)]="formData.image">
+    <label for="studentImage">Student Image:</label>
+  </div>
+  <div class="headings">
+    Student Profile Section :
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="studentName" name="studentName" class="form-control" [(ngModel)]="formData.studentName">
+    <label for="studentName">Student Name:</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="admissionNo" name="admissionNo" class="form-control" [(ngModel)]="formData.admissionNo">
+    <label for="admissionNo">Admission No</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="class" name="class" class="form-control" [(ngModel)]="formData.className">
+    <label for="class">Class</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="Section" name="Section" class="form-control" [(ngModel)]="formData.section">
+    <label for="Section">Section</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="DOB" name="DOB" class="form-control" [(ngModel)]="formData.dOB">
+    <label for="DOB">DOB</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="MothersName" name="MothersName" class="form-control" [(ngModel)]="formData.mothersName">
+    <label for="MothersName">Mothers Name</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="FathersName" name="FathersName" class="form-control" [(ngModel)]="formData.fathersName">
+    <label for="FathersName">Fathers Name</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="ResidentialAddress" name="ResidentialAddress" class="form-control"
+      [(ngModel)]="formData.residentialAddress">
+    <label for="ResidentialAddress">Residential Address</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="TeliphoneNo" name="TeliphoneNo" class="form-control" [(ngModel)]="formData.teliphoneNo">
+    <label for="TeliphoneNo">TeliPhone No</label>
+  </div>
+  <div class="headings">
+    HealthStatus :
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="height" name="height" class="form-control" [(ngModel)]="formData.height">
+    <label for="height">Height (Cm'S)</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="Weight" name="Weight" class="form-control" [(ngModel)]="formData.weight">
+    <label for="height">Weight (Kg'S)</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="bGroup" name="bGroup" class="form-control" [(ngModel)]="formData.bGroup">
+    <label for="bGroup">Blood Group</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="detailHygin" name="detailHygin" class="form-control" [(ngModel)]="formData.detailHygin">
+    <label for="detailHygin">Detail Hygin</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="vision" name="vision" class="form-control" [(ngModel)]="formData.vision">
+    <label for="vision">Vision</label>
+  </div>
+  <div class="headings">
+    <input type="checkbox" id="attendance" name="attendance" class="form-control" [(ngModel)]="formData.attendance">
+    <label for="attendance">ATTENDANCE</label>
+  </div>
+  <div>
+    <div class="table">
+      <div class="left">
+        <div class="headings">
+          Scholastic Areas :
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="TermI" name="TermI" class="form-control" [(ngModel)]="formData.termI">
+          <label for="TermI">Term - I</label>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="TermII" name="TermII" class="form-control" [(ngModel)]="formData.termII">
+          <label for="TermII">Term - II</label>
+        </div>
+      </div>
+      <div class="right">
+        <div class="headings">
+          Subject Names :
+        </div>
+        <div class="tbsub">
+          <div class="SnameLeft">
+            <div class="form-group">
+              <input type="checkbox" id="EVS" name="EVS" class="form-control" [(ngModel)]="formData.eVS">
+              <label for="EVS">EVS</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="english" name="english" class="form-control" [(ngModel)]="formData.english">
+              <label for="english">English</label>
+            </div>
+          </div>
+          <div class="SnameRight">
+            <div class="form-group">
+              <input type="checkbox" id="hindi" name="hindi" class="form-control" [(ngModel)]="formData.hindi">
+              <label for="hindi">Hindi</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="mathematics" name="mathematics" class="form-control"
+                [(ngModel)]="formData.mathematics">
+              <label for="mathematics">Mathematics</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
