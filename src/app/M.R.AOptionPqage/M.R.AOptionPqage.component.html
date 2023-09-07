@@ -1,5 +1,8 @@
 <h2>Option Form</h2>
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="optionFor">Option For: {{formData.optionFor}}</label>
+    </div>
     <div class="headings">
         Images :
     </div>
@@ -222,3 +225,4 @@
     </form>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<button [routerLink]="['/report/', formData.optionFor]">Priview</button>
