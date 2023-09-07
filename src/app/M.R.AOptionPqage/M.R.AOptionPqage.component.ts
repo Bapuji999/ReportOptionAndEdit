@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FileUploadService } from 'src/app/Servise/file-upload.service';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { Validators, Editor, Toolbar } from 'ngx-editor';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-M.R.AOptionPqage',
@@ -13,6 +15,7 @@ import { Validators, Editor, Toolbar } from 'ngx-editor';
 export class M_R_AOptionPqageComponent implements OnInit, OnDestroy {
   formData: any = {};
   editor: Editor = new Editor();
+  trustedHtml: any;
   toolbar: Toolbar = [
     ['bold', 'italic'],
     ['underline', 'strike'],
@@ -28,10 +31,13 @@ export class M_R_AOptionPqageComponent implements OnInit, OnDestroy {
   });
   constructor(
     private http: HttpClient,
-    private fileUploadService: FileUploadService
+    private fileUploadService: FileUploadService,
+    private sanitizer: DomSanitizer,
+    private router: Router
   ) { }
 
   async ngOnInit() {
+    debugger;
     this.formData = await this.http.get('https://localhost:44317/api/MRAoptions/Getjson').toPromise();
     this.editor = new Editor();
     this.form.get('editorContent')?.patchValue(this.formData.editorContent);
@@ -40,8 +46,9 @@ export class M_R_AOptionPqageComponent implements OnInit, OnDestroy {
     this.editor.destroy();
   }
   onSubmit() {
+    debugger;
     this.formData.editorContent = this.form.controls.editorContent.value;
-    console.log('Form submitted with data:', this.formData);
+    console.log('Form submitted with data:', this.form.controls.editorContent.value);
     const body = this.formData;
     this.http.post('https://localhost:44317/api/MRAoptions/Putjson', body).subscribe();
   }

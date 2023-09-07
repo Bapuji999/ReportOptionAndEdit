@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-Report_Page',
@@ -10,15 +11,39 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class Report_PageComponent implements OnInit {
   options: any;
   decodedHTML: any;
-  trustedHtml:any;
+  trustedHtml: any;
+  reportList: any;
+  reportHtml: any;
+  reportId: any;
+  studentList: any = [];
   constructor(private http: HttpClient,
-    private sanitizer: DomSanitizer) { }
+    private sanitizer: DomSanitizer,
+    private route: ActivatedRoute) { }
 
   async ngOnInit() {
+    debugger;
+    this.reportId = this.route.snapshot.paramMap.get('id');
+    this.reportList = await this.http.get('https://localhost:44317/api/MRAoptions/GetTemplate').toPromise();
+    var report = this.reportList.find((element: any) =>{
+      return element.templateName = "Sample1";
+    })
+    var unstructureReport = report.template;
+    this.reportHtml = this.sanitizer.bypassSecurityTrustHtml(unstructureReport);
+    debugger
     this.options = await this.http.get('https://localhost:44317/api/MRAoptions/Getjson').toPromise();
     const untrustedHtml = this.options.editorContent;
     this.trustedHtml = this.sanitizer.bypassSecurityTrustHtml(untrustedHtml);
     debugger;
+    this.createStudentList();
+  }
+
+  createStudentList() {
+    for (let i = 1; i <= 1; i++) {
+      debugger;
+      let stuObj = { studentName: i };
+      this.studentList.push(stuObj);
+    }
+    console.log(this.studentList);
   }
 
   printTable() {

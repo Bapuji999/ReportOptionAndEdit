@@ -1,0 +1,15 @@
+
+.textarea{
+    display: block;
+}
+.btn_upload{
+    display: block;
+}
+.headings{
+    margin: 10px;
+    font-weight: bold;
+}
+.form-group{
+    margin: 10px;
+    width: 350px;
+}

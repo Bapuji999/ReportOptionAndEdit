@@ -10,13 +10,15 @@ import {HttpClientModule} from '@angular/common/http'
 import { M_R_AOptionPqageComponent } from './M.R.AOptionPqage/M.R.AOptionPqage.component';
 import { NgxEditorModule, schema } from 'ngx-editor';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FirstPageComponent } from './firstPage/firstPage.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
       OptionFormComponent,
       Report_PageComponent,
-      M_R_AOptionPqageComponent
+      M_R_AOptionPqageComponent,
+      FirstPageComponent
    ],
   imports: [
     BrowserModule,
