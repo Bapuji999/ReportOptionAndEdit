@@ -21,29 +21,13 @@ export class Report_PageComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   async ngOnInit() {
-    debugger;
     this.reportId = this.route.snapshot.paramMap.get('id');
     this.reportList = await this.http.get('https://localhost:44317/api/MRAoptions/GetTemplate').toPromise();
     var report = this.reportList.find((element: any) =>{
-      return element.templateName = "Sample1";
+      return element.templateName == this.reportId;
     })
     var unstructureReport = report.template;
     this.reportHtml = this.sanitizer.bypassSecurityTrustHtml(unstructureReport);
-    debugger
-    this.options = await this.http.get('https://localhost:44317/api/MRAoptions/Getjson').toPromise();
-    const untrustedHtml = this.options.editorContent;
-    this.trustedHtml = this.sanitizer.bypassSecurityTrustHtml(untrustedHtml);
-    debugger;
-    this.createStudentList();
-  }
-
-  createStudentList() {
-    for (let i = 1; i <= 1; i++) {
-      debugger;
-      let stuObj = { studentName: i };
-      this.studentList.push(stuObj);
-    }
-    console.log(this.studentList);
   }
 
   printTable() {

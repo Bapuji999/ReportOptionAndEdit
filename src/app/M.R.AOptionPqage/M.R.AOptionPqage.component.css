@@ -38,18 +38,54 @@ button{
     float: right;
 }
 .examBlock{
-    width: 80%;
+    width: 60%;
     display: flex;
 }
 .examBlockTerm1{
-    width:40%;
+    width:50%;
     float: left;
 }
 .examBlockTerm2{
-    width:40%;
+    width:50%;
     float: right;
 }
 .principal{
     margin-top: 40px;
     margin-bottom: 40px;
+}
+.S1{
+    width: 40%;
+    display: flex;
+}
+.O1{
+    width:30%;
+    float: left;
+}
+.O2{
+    width:70%;
+    float: right;
+}
+.SExam{
+    width: 100%;
+    display: flex;
+}
+.CRTO{
+    width: 60%;
+    display: flex;
+}
+.Co{
+    width:50%;
+    float: left;
+}
+
+.RTO{
+    width:50%;
+    float: right;
+}
+.CRS{
+    width: 100%;
+    display: flex;
+}
+.editor{
+    margin-left: 200px;
 }
