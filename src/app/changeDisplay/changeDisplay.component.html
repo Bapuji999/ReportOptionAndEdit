@@ -1,0 +1,149 @@
+<h2>Display Form</h2>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="all">
+    <div class="box">
+      <div class="headings">
+        Subject Display Name :
+      </div>
+      <div class="form-group">
+        <label for="english">English</label>
+        <input type="text" id="english" name="english" class="form-control subDis" [(ngModel)]="formData.english">
+      </div>
+      <div class="form-group">
+        <label for="hindi">Hindi</label>
+        <input type="text" id="hindi" name="hindi" class="form-control subDis" [(ngModel)]="formData.hindi">
+      </div>
+      <div class="form-group">
+        <label for="punjabi">Punjabi</label>
+        <input type="text" id="punjabi" name="punjabi" class="form-control subDis" [(ngModel)]="formData.punjabi">
+      </div>
+      <div class="form-group">
+        <label for="science">Science</label>
+        <input type="text" id="science" name="science" class="form-control subDis" [(ngModel)]="formData.science">
+      </div>
+      <div class="form-group">
+        <label for="socialScience">Social Science</label>
+        <input type="text" id="socialScience" name="socialScience" class="form-control subDis"
+          [(ngModel)]="formData.socialScience">
+      </div>
+      <div class="form-group">
+        <label for="sanskrit">Sanskrit</label>
+        <input type="text" id="sanskrit" name="sanskrit" class="form-control subDis" [(ngModel)]="formData.sanskrit">
+      </div>
+      <div class="form-group">
+        <label for="computerScience">Computer Science</label>
+        <input type="text" id="computerScience" name="computerScience" class="form-control subDis"
+          [(ngModel)]="formData.computerScience">
+      </div>
+      <div class="form-group">
+        <label for="drawing">Drawing</label>
+        <input type="text" id="drawing" name="drawing" class="form-control subDis" [(ngModel)]="formData.drawing">
+      </div>
+    </div>
+    <div class="box">
+      <div class="headings">
+        Exam Display Name for Term I :
+      </div>
+      <div class="form-group">
+        <label for="Term I">Term I</label>
+        <input type="text" id="termI" name="termI" class="form-control subDis" [(ngModel)]="formData.termI">
+      </div>
+      <div class="form-group">
+        <label for="unitTest">Unit Test</label>
+        <input type="text" id="unitTest" name="unitTest" class="form-control subDis" [(ngModel)]="formData.unitTest">
+      </div>
+      <div class="form-group">
+        <label for="noteBook">Note Book</label>
+        <input type="text" id="noteBook" name="noteBook" class="form-control subDis" [(ngModel)]="formData.noteBook">
+      </div>
+      <div class="form-group">
+        <label for="subjectEnrichment">Subject Enrichment</label>
+        <input type="text" id="subjectEnrichment" name="subjectEnrichment" class="form-control subDis"
+          [(ngModel)]="formData.subjectEnrichment">
+      </div>
+      <div class="form-group">
+        <label for="halfYearly">Half Yearly</label>
+        <input type="text" id="halfYearly" name="halfYearly" class="form-control subDis"
+          [(ngModel)]="formData.halfYearly">
+      </div>
+    </div>
+    <div class="box">
+      <div class="headings">
+        Exam Display Name for Term II :
+      </div>
+      <div class="form-group">
+        <label for="Term I">Term II</label>
+        <input type="text" id="termI" name="termI" class="form-control subDis">
+      </div>
+      <div class="form-group">
+        <label for="unitTest">Unit Test</label>
+        <input type="text" id="unitTest" name="unitTest" class="form-control subDis">
+      </div>
+      <div class="form-group">
+        <label for="noteBook">Note Book</label>
+        <input type="text" id="noteBook" name="noteBook" class="form-control subDis">
+      </div>
+      <div class="form-group">
+        <label for="subjectEnrichment">Subject Enrichment</label>
+        <input type="text" id="subjectEnrichment" name="subjectEnrichment" class="form-control subDis">
+      </div>
+      <div class="form-group">
+        <label for="halfYearly">Half Yearly</label>
+        <input type="text" id="halfYearly" name="halfYearly" class="form-control subDis">
+      </div>
+    </div>
+  </div>
+  <div class="all">
+    <div class="box">
+      <div class="headings">
+        Co-Curricular Activities Display Name :
+      </div>
+      <div class="form-group">
+        <label for="generalKnowledge">General Knowledge</label>
+        <input type="text" id="generalKnowledge" name="generalKnowledge" class="form-control subDis"
+          [(ngModel)]="formData.generalKnowledge">
+      </div>
+      <div class="form-group">
+        <label for="moralValues">Moral Values</label>
+        <input type="text" id="moralValues" name="moralValues" class="form-control subDis"
+          [(ngModel)]="formData.moralValues">
+      </div>
+      <div class="form-group">
+        <label for="workEducation">Work/Art</label>
+        <input type="text" id="workEducation" name="workEducation" class="form-control subDis"
+          [(ngModel)]="formData.workEducation">
+      </div>
+      <div class="form-group">
+        <label for="health">Health & Physical</label>
+        <input type="text" id="health" name="health" class="form-control subDis" [(ngModel)]="formData.health">
+      </div>
+      <div class="form-group">
+        <label for="discipline">Discipline</label>
+        <input type="text" id="discipline" name="discipline" class="form-control subDis"
+          [(ngModel)]="formData.discipline">
+      </div>
+    </div>
+    <div class="box">
+      <div class="headings">
+        Signatures :
+      </div>
+      <div class="form-group" *ngIf="formData.parentSig">
+        <label for="parentDisplay">Parent Display Name:</label>
+        <input type="text" id="parentDisplay" name="parentDisplay" class="form-control subDis"
+          [(ngModel)]="formData.parentDisplay">
+      </div>
+      <div class="form-group" *ngIf="formData.educatorSig">
+        <label for="educatorDisplay">Educator Display Name:</label>
+        <input type="text" id="educatorDisplay" name="educatorDisplay" class="form-control subDis"
+          [(ngModel)]="formData.educatorDisplay">
+      </div>
+      <div class="form-group">
+        <label for="principalDisplay">Principal Display Name:</label>
+        <input type="text" id="principalDisplay" name="principalDisplay" class="form-control subDis"
+          [(ngModel)]="formData.principalDisplay">
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>

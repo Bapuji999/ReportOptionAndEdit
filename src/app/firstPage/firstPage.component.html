@@ -18,6 +18,6 @@
       Choose HTML template :
   </div>
   <div *ngFor="let template of templateList">
-      <button (click)="goForm()">{{template.templateName}}</button>
+      <button (click)="goForm(template.TemplateId)">{{template.TemplateName}}</button>
   </div>
 </div>

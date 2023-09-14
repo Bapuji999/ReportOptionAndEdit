@@ -1,0 +1,42 @@
+.headings{
+    margin: 10px;
+    font-weight: bold;
+}
+.form-group{
+    margin: 10px;
+    width: 350px;
+}
+.row{
+    width: 50%;
+    display: flex;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.btn{
+    background-color: rgba(97, 255, 160, 0.773);
+    outline: none;
+    border: none;
+    color: rgb(129, 82, 0);
+    margin: 25px;
+    padding: 10px;
+    font-size: large;
+    border-radius: 17px;
+}
+.btn:hover{
+    background-color: rgb(115, 97, 255);
+}
+
+.subDis{
+    float: right;
+}
+.all{
+    width: 100%;
+    display: flex;
+}
+.box{
+    margin: 10px;
+}

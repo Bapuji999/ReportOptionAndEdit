@@ -1,0 +1,11 @@
+<h2>Editor Page</h2>
+  <div class="editor">
+    <form [formGroup]="form">
+        <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+            <ngx-editor [editor]="editor" formControlName="editorContent" class="editorPlace"> </ngx-editor>
+        </div>
+        
+  <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

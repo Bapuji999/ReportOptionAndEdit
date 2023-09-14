@@ -1,0 +1,22 @@
+
+.editor{
+    width: 500px;
+}
+.editorPlace{
+    height: 100px;
+    display: block;
+}
+
+.btn{
+    background-color: rgba(97, 255, 160, 0.773);
+    outline: none;
+    border: none;
+    color: rgb(129, 82, 0);
+    margin: 25px;
+    padding: 10px;
+    font-size: large;
+    border-radius: 17px;
+}
+.btn:hover{
+    background-color: rgb(115, 97, 255);
+}
