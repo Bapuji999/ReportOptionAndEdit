@@ -16,15 +16,18 @@ export class FirstPageComponent implements OnInit {
     private router: Router) { }
 
   async ngOnInit() {
-    this.templateList = await this.http.get('https://localhost:44317/api/MRAoptions/GetTemplate').toPromise();
+    debugger;
+    this.templateList = await this.http.get('https://localhost:44330/api/MRAoptions/GetTemplates').toPromise();
+    console.log(this.templateList);
   }
   uploadHtml() {
     if (this.tempHtml.template != null && this.tempHtml.template != '') {
       const body = this.tempHtml;
-      this.http.post('https://localhost:44317/api/MRAoptions/PutTemplates', body).subscribe();
+      this.http.post('https://localhost:7101/api/MRAoptions/SaveTemplate', body).subscribe();
     }
   }
-  goForm(){
-    this.router.navigate(['/form']);
+  goForm(id:any){
+    debugger;
+    this.router.navigate(['/activity', id]);
   }
 }

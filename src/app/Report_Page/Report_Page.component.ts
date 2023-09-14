@@ -9,25 +9,71 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./Report_Page.component.css']
 })
 export class Report_PageComponent implements OnInit {
+  id: any;
   options: any;
-  decodedHTML: any;
-  trustedHtml: any;
-  reportList: any;
-  reportHtml: any;
-  reportId: any;
-  studentList: any = [];
+  html: any;
+  optionsList: any;
   constructor(private http: HttpClient,
     private sanitizer: DomSanitizer,
     private route: ActivatedRoute) { }
 
   async ngOnInit() {
-    this.reportId = this.route.snapshot.paramMap.get('id');
-    this.reportList = await this.http.get('https://localhost:44317/api/MRAoptions/GetTemplate').toPromise();
-    var report = this.reportList.find((element: any) =>{
-      return element.templateName == this.reportId;
-    })
-    var unstructureReport = report.template;
-    this.reportHtml = this.sanitizer.bypassSecurityTrustHtml(unstructureReport);
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.html = await this.http.get('https://localhost:44330/api/MRAoptions/GetTemplateById?templateId=' + this.id).toPromise();
+    var unstructureReport = this.html[0].TemplateHtml;
+    this.html = this.sanitizer.bypassSecurityTrustHtml(unstructureReport);
+    await this.removeOptionals();
+    await this.removeSpecialCases();
+  }
+
+  async removeOptionals() {
+    this.optionsList = await this.http.get('https://localhost:44330/api/MRAoptions/GetOptionsByTemplateId?templateId=' + this.id).toPromise();
+    const idsToRemove = this.optionsList.filter((option: any) => option.OptionValue == 0);
+    debugger;
+    console.log(idsToRemove);
+    idsToRemove.forEach((Obj: any) => {
+      var elementToRemove = document.getElementById(Obj.AssociatedHtmlId);
+      if (elementToRemove) {
+        elementToRemove.parentNode?.removeChild(elementToRemove);
+      }
+      var elements = document.getElementsByClassName(Obj.AssociatedHtmlId);
+      while (elements.length > 0) {
+        elements[0].parentNode?.removeChild(elements[0]);
+      }
+    });
+  }
+
+  async removeSpecialCases(){
+    debugger;
+    this.optionsList = await this.http.get('https://localhost:44330/api/MRAoptions/GetOptionsByTemplateId?templateId=' + this.id).toPromise();
+    const schoolLogoId = this.optionsList.find((item:any) => item.AssociatedHtmlId == "schoolLogo");
+    const boardlogoId = this.optionsList.find((item:any) => item.AssociatedHtmlId == "boardlogo");
+    const parentId = this.optionsList.find((item:any) => item.AssociatedHtmlId == "parent");
+    const educatorId = this.optionsList.find((item:any) => item.AssociatedHtmlId == "educator");
+    if(schoolLogoId.OptionValue || boardlogoId.OptionValue){
+      var elementToRemove = document.getElementById("headWithNoLogo");
+      if (elementToRemove) {
+        elementToRemove.parentNode?.removeChild(elementToRemove);
+      }
+    }
+    else{
+      var elementToRemove = document.getElementById("headWithLogo");
+      if (elementToRemove) {
+        elementToRemove.parentNode?.removeChild(elementToRemove);
+      }
+    }
+    if(parentId.OptionValue || educatorId.OptionValue){
+      var elementToRemove = document.getElementById("onlyPrincipal");
+      if (elementToRemove) {
+        elementToRemove.parentNode?.removeChild(elementToRemove);
+      }
+    }
+    else{
+      var elementToRemove = document.getElementById("allSignature");
+      if (elementToRemove) {
+        elementToRemove.parentNode?.removeChild(elementToRemove);
+      }
+    }
   }
 
   printTable() {

@@ -1,0 +1,75 @@
+<h2>Option Form</h2>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="left">
+      <div class="headings">
+        Images :
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="logo" name="logo" class="form-control" [(ngModel)]="formData.schoolLogo">
+        <label for="School Logo">School Logo</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="bordLogo" name="bordLogo" class="form-control" [(ngModel)]="formData.boardlogo">
+        <label for="boardLogo">Board Logo</label>
+      </div>
+    </div>
+    <div class="right">
+      <div class="headings">
+        Student Profile Section :
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="fatherName" name="fatherName" class="form-control" [(ngModel)]="formData.fatherName">
+        <label for="fatherName">Father's Name</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="motherName" name="motherName" class="form-control" [(ngModel)]="formData.motherName">
+        <label for="motherName">Mother's Name</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="dob" name="dob" class="form-control" [(ngModel)]="formData.dob">
+        <label for="dob">DOB</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="left">
+      <div class="headings">
+        Result Table Options :
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="totalPerSubject" name="totalPerSubject" class="form-control"
+          [(ngModel)]="formData.totalPerSub">
+        <label for="totalPerSubject">Total Per Subject</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="grade" name="grade" class="form-control" [(ngModel)]="formData.gradePerSub">
+        <label for="grade">Grade</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="overalTotal" name="overalTotal" class="form-control"
+          [(ngModel)]="formData.overalTotal">
+        <label for="overalTotal">Overal Total</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="overalPercentage" name="overalPercentage" class="form-control"
+          [(ngModel)]="formData.overalPercentage">
+        <label for="overalPercentage">Overal Percentage</label>
+      </div>
+    </div>
+    <div class="right">
+      <div class="headings">
+        Signatures :
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="parentSig" name="parentSig" class="form-control" [(ngModel)]="formData.parent">
+        <label for="parentSig">Parent Signature</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="educator" name="educator" class="form-control" [(ngModel)]="formData.educator">
+        <label for="educator">Educator Signature</label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
